@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.light-mode {
+  background-color: #f0f4f8;
+  color: #333;
+}
+
+body.dark-mode {
+  background-color: #1a202c;
+  color: #e2e8f0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+.dark-mode .container {
+  background-color: #2d3748;
+}
+
+h1, h2 {
+  color: #2c5282;
+  margin-bottom: 1.5rem;
+}
+
+.dark-mode h1, .dark-mode h2 {
+  color: #63b3ed;
+}
+
+input, button, select {
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+input, select {
+  border: 1px solid #cbd5e0;
+  width: calc(100% - 1.5rem);
+}
+
+.dark-mode input, .dark-mode select {
+  background-color: #2d3748;
+  color: #e2e8f0;
+  border-color: #4a5568;
+}
+
+button {
+  background-color: #3182ce;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #2c5282;
+}
+
+.dark-mode button {
+  background-color: #4299e1;
+}
+
+.dark-mode button:hover {
+  background-color: #3182ce;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background-color: #e2e8f0;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.dark-mode .progress-bar {
+  background-color: #4a5568;
+}
+
+.progress {
+  height: 100%;
+  background-color: #3182ce;
+  transition: width 0.1s linear;
+}
+
+.dark-mode .progress {
+  background-color: #4299e1;
+}
+
+.controls-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.setting-control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.setting-control label {
+  font-weight: bold;
+  color: #4a5568;
+}
+
+.dark-mode .setting-control label {
+  color: #a0aec0;
+}
+
+.mode-toggle {
+  background-color: #718096;
+}
+
+.mode-toggle:hover {
+  background-color: #4a5568;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.error {
+  color: #e53e3e;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .controls-group {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .settings {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .setting-control {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .setting-control label {
+    margin-right: 0.5rem;
+  }
+
+  input, select {
+    width: auto;
+  }
+
+  button {
+    width: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.main-nav {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .main-nav {
+  background-color: #2d3748;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.main-nav a {
+  color: #4a5568;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .main-nav a {
+  color: #e2e8f0;
+}
+
+.main-nav a:hover {
+  background-color: #edf2f7;
+}
+
+.dark-mode .main-nav a:hover {
+  background-color: #4a5568;
+}
+
+.main-nav a.active {
+  background-color: #3182ce;
+  color: #ffffff;
+}
+
+.dark-mode .main-nav a.active {
+  background-color: #4299e1;
+}
+
+@media (max-width: 768px) {
+  .main-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-nav a {
+    width: 100%;
+    text-align: center;
+    margin: 0.25rem 0;
+  }
+}
