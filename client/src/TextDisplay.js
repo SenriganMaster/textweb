@@ -11,6 +11,7 @@ function TextDisplay({ darkMode, setDarkMode }) {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
 
   const fetchText = async () => {
     if (!id || !password) {
@@ -19,7 +20,7 @@ function TextDisplay({ darkMode, setDarkMode }) {
       return;
     }
     try {
-      const response = await axios.post('http://localhost:3001/api/texts/get', { id, password });
+      const response = await axios.post(`${API_URL}/api/texts/get`, { id, password });
       setText(response.data);
       setError('');
       setIsStarted(false);

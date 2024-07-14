@@ -6,11 +6,12 @@ function TextRegister() {
   const [password, setPassword] = useState('');
   const [content, setContent] = useState('');
   const [message, setMessage] = useState('');
+  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3001/api/texts', {
+      const response = await axios.post(`${API_URL}/api/texts`, {
         id,
         password,
         content: content.split('\n')
