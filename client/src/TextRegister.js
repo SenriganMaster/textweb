@@ -16,6 +16,7 @@ function TextRegister() {
         password,
         content: content.split('\n')
       });
+      console.log('Registration successful:', response.data);  // ここでresponseを使用
       setMessage('テキストが正常に登録されました！');
       setId('');
       setPassword('');
